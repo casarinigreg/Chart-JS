@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="display: flex;">
+        <div style="width: 50%;">
+            <canvas id="graficoTempMedia"></canvas>
+        </div>
+        <div style="width: 50%;">
+            <canvas id="graficoUmiMedia"></canvas>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+ const tempMedia = document.getElementById('graficoTempMedia');
+
+  new Chart(tempMedia, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+        beginAtZero: true,
+        min: 0,
+        max: 30,
+        ticks: {
+        stepSize: 5
+        }
+        }
+      }
+    }
+  });
+
+  const umidadeMedia = document.getElementById('graficoUmiMedia');
+
+  new Chart(umidadeMedia, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Umidade Média',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+        beginAtZero: true,
+        min: 0,
+        max: 100,
+        ticks: {
+        stepSize: 10
+        }
+        }
+      }
+    }
+  });
+
+</script>
